@@ -74,7 +74,7 @@ py::array_t<double> create_data(py::array_t<double, py::array::c_style | py::arr
 // wrap as Python module
 PYBIND11_MODULE(np_fft,m)
 {
-  m.doc() = "pybind11 example plugin";
+  m.doc() = "Tool for accelerated spectrogram counting";
 
-  m.def("window_func", &create_data, "Arguments: (n_replicas - length of slice along Z-axis,\n size - length of a single Z-slice,\n zmin,\n zmax,\n stride - length of one r*phi stripe\n)");
+  m.def("window_func", &create_data, "Arguments: (array - input 1D np_array,\n n_replicas - length of slice along Z-axis,\n size - length of a single Z-slice,\n zmin,\n zmax,\n stride - length of one r*phi stripe\n)");
 }
