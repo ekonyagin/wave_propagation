@@ -48,7 +48,9 @@ py::array_t<double> create_data(py::array_t<double, py::array::c_style | py::arr
       create_filt(filt, k, zrange, size);
       for(int i=0; i<stride; i++){
           for(int j=0; j<size; j++){
-              result_vec[k*stride*size + i*size + j] = *(((double*)array.data())+j)*filt[j];
+              result_vec[k*stride*size + i*size + j] = /**(((double*)array.data())+j)**/ filt[j];
+              if (k*stride*size + i*size + j<20)
+                std::cout << *(((double*)array.data())+j) << "\n";
           }
       }
   }
