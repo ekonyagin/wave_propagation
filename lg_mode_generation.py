@@ -149,6 +149,7 @@ class LG_mode_generation():
             zz = np.linspace(zmin*2*np.pi, zmax*2*np.pi, nofzs)
             rhos = np.linspace(0, 7*2*np.pi, nofrho)
             phis = np.linspace(0, 2*np.pi, nofphi)
+            self.z_grid = zz.copy()
             
             self.d_sampling_rate = zz[1] - zz[0]
             self.nofzs, self.nofrho, self.nofphi = nofzs, nofrho, nofphi
